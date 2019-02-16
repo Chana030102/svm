@@ -46,10 +46,10 @@ plt.plot(fpr,tpr, lw=2, label='ROC curve (area=%0.2f)' % roc_auc)
 plt.xlabel('FPR')
 plt.ylabel('TPR')
 plt.title('ROC Curve - Spam Database')
-plt.show()
+#plt.show()
 
 #========= Experiment 2 ==========
-print("Experiment 2 Start")
+print("\nExperiment 2 Start")
 w = model.coef_   # Retrieve weight vector
 x = numpy.arange(2,58)
 a = []            # store accuracy
@@ -69,12 +69,13 @@ plt.figure()
 plt.plot(x, a, lw=2)
 plt.xlabel('m')
 plt.ylabel('Accuracy')
+plt.ylim(0.5, 1.0)
 plt.title('Feature Selection Accuracy')
 plt.show()
     
 
 #========= Experiment 3 ==========
-print("Experiment 3 Start")
+print("\nExperiment 3 Start")
 b = []    # store accuracy
 for m in range(2,58):
     index = numpy.random.choice(57,m)
@@ -88,5 +89,6 @@ plt.figure()
 plt.plot(x, b, lw=2)
 plt.xlabel('m')
 plt.ylabel('Accuracy')
+plt.ylim(0.5, 1.0)
 plt.title('Random Feature Selection Accuracy')
 plt.show()
