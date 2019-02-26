@@ -1,3 +1,12 @@
+# main.py
+# 
+# Aaron Chan
+# CS 445 Machine Learning (Winter 2019)
+# Homework 3 - Support Vector Machine
+
+# Experiment 1 - plot ROC curve
+# Experiment 2 - Feature selection
+# Experiment 3 - Random Feature Selection
 
 from sklearn import svm
 import sklearn.metrics as metric
@@ -51,7 +60,7 @@ plt.title('ROC Curve - Spam Database')
 #========= Experiment 2 ==========
 print("\nExperiment 2 Start")
 w = model.coef_   # Retrieve weight vector
-x = numpy.arange(2,58)
+x = numpy.arange(2,58) # use with plotting accuracy
 a = []            # store accuracy
 
 top = numpy.argpartition(w,-5)[:,-5:].reshape(5)
